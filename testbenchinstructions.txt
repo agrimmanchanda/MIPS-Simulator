@@ -1,0 +1,36 @@
+lhu: read from ADDR_INSTR + 2 (can read from instruction memory)
+addiu $16, $16, 1
+sll $16, $16, 28
+lhu $2, 2($16)
+sll $0, $0, 0
+jr $0
+
+
+lbu: reads from unsafe position
+addiu $16, $16, 1
+sll $16, $16, 28
+addiu $19, $19, 1
+sll $19, $19, 24
+addu $19, $19, $16
+lbu $20, 0($19)
+sll $0, $0, 0
+jr $0
+sll $0, $0, 0
+
+
+
+lh: read from three memory locations
+addiu $16, $16, 1
+sll $16, $16, 28
+lh $2, 0($16)
+sll $0, $0, 0
+lh $18, 4096($16)
+sll $0, $0, 0
+addiu $19, $19, 1
+sll $19, $19, 24
+addiu $19, $19, -2
+addu $19, $19, $16
+lh $20, 0($19)
+sll $0, $0, 0
+jr $0
+sll $0, $0, 0
