@@ -13,7 +13,7 @@ To compile and create executable for testbench:
 
 To test simulator and testbench together:
 
-bin/mips_testbench bin/mips_simulator 
+	bin/mips_testbench bin/mips_simulator 
 
 This will run the simulator against all the tests. Ideal simulator passes all tests. 
 
